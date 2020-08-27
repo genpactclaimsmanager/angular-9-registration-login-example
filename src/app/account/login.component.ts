@@ -39,9 +39,9 @@ export class LoginComponent implements OnInit {
     onSubmit() {
         this.submitted = true;
 
-        this.httpClient.post('https://func-spabackend.azurewebsites.net/api/helloworld?', { "name" : "brahm" }).subscribe((res)=>{
+        this.httpClient.post('https://func-spabackend.azurewebsites.net/api/helloworld?', { "name" : this.f.username.value }).subscribe((res)=>{
             console.log(res);
- });
+        });
         // reset alerts on submit
         this.alertService.clear();
 
