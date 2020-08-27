@@ -38,7 +38,8 @@ export class LoginComponent implements OnInit {
 
     onSubmit() {
         this.submitted = true;
-
+console.log(this.f.username.value);
+console.log(this.form.username);
         this.httpClient.post('https://func-spabackend.azurewebsites.net/api/helloworld?', { "name" : this.f.username.value }).subscribe((res)=>{
             console.log(res);
         });
