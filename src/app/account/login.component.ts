@@ -35,14 +35,12 @@ export class LoginComponent implements OnInit {
     }
 
     // convenience getter for easy access to form fields
-    get f() {
-      
-        return this.form.controls; }
-        SendToVerification(){
-            this.httpClient.post(`${environment.apiUrl}SendPhoneVerficationCode`, { "phone" : this.form.controls.phoneNumber.value }).subscribe((res)=>{
-                console.log(res);
-                console.log(this.form);
-            });
+    get f() { 
+        return this.form.controls;
+     }
+    
+    SendToVerification(){
+         console.log('test');
         }
     onSubmit() {
         this.submitted = true;
@@ -54,6 +52,15 @@ export class LoginComponent implements OnInit {
         if (this.form.invalid) {
             return;
         }
+        this.httpClient.post(`${environment.apiUrl}SendPhoneVerficationCode`, { "phone" : this.form.controls.phoneNumber.value }).subscribe((res)=>{
+            console.log(res);
+            console.log(this.form);
+        });
+
+        this.httpClient.post(`${environment.apiUrl}VerifyPhoneValidationCode`, { "phone" : this.form.controls.phoneNumber.value, "code":  this.form.controls.verificationCode.value}).subscribe((res)=>{
+            console.log(res);
+            console.log(this.form);
+        });
 
         this.loading = true;
         this.accountService.login(this.f.username.value, this.f.password.value)
