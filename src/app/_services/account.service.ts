@@ -42,7 +42,7 @@ export class AccountService {
     }
 
     register(user: User) {
-        return this.http.post(`https://func-spabackend.azurewebsites.net/api/users/register`, user);
+        return this.http.post(`${environment.apiUrl}users/register`, user);
     }
 
     getAll() {
