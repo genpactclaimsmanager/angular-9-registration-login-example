@@ -26,7 +26,8 @@ export class LoginComponent implements OnInit {
     ngOnInit() {
         this.form = this.formBuilder.group({
             username: ['', Validators.required],
-            password: ['', Validators.required]
+            password: ['', Validators.required],
+            phoneNumber: ['']
         });
 
         // get return url from route parameters or default to '/'
@@ -34,11 +35,13 @@ export class LoginComponent implements OnInit {
     }
 
     // convenience getter for easy access to form fields
-    get f() { return this.form.controls; }
+    get f() {
+        console.log(this.f)
+        return this.form.controls; }
 
     onSubmit() {
         this.submitted = true;
-        this.httpClient.post(`${environment.apiUrl}SendPhoneVerficationCode`, { "phone" : this.form.phoneNumber.value }).subscribe((res)=>{
+        this.httpClient.post(`${environment.apiUrl}SendPhoneVerficationCode`, { "phone" : "+15038257323" }).subscribe((res)=>{
             console.log(res);
         });
         // reset alerts on submit
