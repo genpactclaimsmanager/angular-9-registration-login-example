@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-
+import { environment } from '@environments/environment';
 
 import { AccountService, AlertService } from '@app/_services';
 
@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
         this.submitted = true;
 console.log(this.f.username.value);
 console.log(this.form.username);
-        this.httpClient.post('https://func-spabackend.azurewebsites.net/api/helloworld?', { "name" : this.f.username.value }).subscribe((res)=>{
+        this.httpClient.post(`${environment.apiUrl}/SendPhoneVerficationCode`, { "phone" : "+1503894561" }).subscribe((res)=>{
             console.log(res);
         });
         // reset alerts on submit
