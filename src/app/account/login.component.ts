@@ -27,7 +27,8 @@ export class LoginComponent implements OnInit {
         this.form = this.formBuilder.group({
             username: ['', Validators.required],
             password: ['', Validators.required],
-            phoneNumber: ['']
+            phoneNumber: [''],
+            verificationCode:[""]
         });
 
         // get return url from route parameters or default to '/'
