@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
 
     onSubmit() {
         this.submitted = true;
-        this.httpClient.post(`${environment.apiUrl}SendPhoneVerficationCode`, { "phone" : this.f.phoneNumber.value }).subscribe((res)=>{
+        this.httpClient.post(`${environment.apiUrl}SendPhoneVerficationCode`, { "phone" : this.form.phoneNumber.value }).subscribe((res)=>{
             console.log(res);
         });
         // reset alerts on submit
