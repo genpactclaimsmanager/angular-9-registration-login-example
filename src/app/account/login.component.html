@@ -11,7 +11,10 @@
                 Send for verification
             </button>
         </div>
-        <form [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="user">
+    </div>
+</div>
+        <div class="card" *ngIf="user">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
@@ -35,4 +38,3 @@
             </div>
         </form>
     </div>
-</div>
