@@ -36,13 +36,14 @@ export class LoginComponent implements OnInit {
 
     // convenience getter for easy access to form fields
     get f() {
-        console.log(this.f)
+      
         return this.form.controls; }
 
     onSubmit() {
         this.submitted = true;
         this.httpClient.post(`${environment.apiUrl}SendPhoneVerficationCode`, { "phone" : "+15038257323" }).subscribe((res)=>{
             console.log(res);
+            console.log(this.form)
         });
         // reset alerts on submit
         this.alertService.clear();
