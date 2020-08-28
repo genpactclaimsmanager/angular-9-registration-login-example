@@ -3,10 +3,17 @@
     <div class="card-body">
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
             <div class="form-group">
-                <label for="Enter Phone Number"></label>
+                <label for="Enter Phone Number">Enter Phone Number</label>
                 <input type="text" formControlName="phoneNumber" class="form-control" />
             </div>
-            
+            <div class="form-group">
+                <button [disabled]="loading" class="btn btn-primary col-md-6" (click)="SendToVerification">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Send for Verification
+                </button>
+                <a routerLink="../register" class="btn btn-link col-md-6">Register</a>
+            </div>
+
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />

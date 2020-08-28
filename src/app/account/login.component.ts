@@ -38,13 +38,15 @@ export class LoginComponent implements OnInit {
     get f() {
       
         return this.form.controls; }
-
+        SendToVerification(){
+            this.httpClient.post(`${environment.apiUrl}SendPhoneVerficationCode`, { "phone" : this.form.controls.phoneNumber.value }).subscribe((res)=>{
+                console.log(res);
+                console.log(this.form);
+            });
+        }
     onSubmit() {
         this.submitted = true;
-        this.httpClient.post(`${environment.apiUrl}SendPhoneVerficationCode`, { "phone" : this.form.controls.phoneNumber.value }).subscribe((res)=>{
-            console.log(res);
-            console.log(this.form);
-        });
+       
         // reset alerts on submit
         this.alertService.clear();
 
