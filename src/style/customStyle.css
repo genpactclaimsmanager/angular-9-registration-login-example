@@ -1,0 +1,173 @@
+/*
+html {
+    max-width: 1440px;
+}
+*/
+
+body {
+    overflow-x: hidden;
+    background-image: url('../assets/images/bg.png');
+    background-position: cover;
+    /*    background-color: rgba(242, 245, 245, 0.86);*/
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Sentinel-Bold' !important;
+}
+
+label {
+    font-weight: normal !important;
+    color: #244970;
+}
+
+input,
+select,
+button,
+.bootstrap-select,
+table,
+.pagination-info {
+    font-family: 'Proxima' !important;
+    font-weight: lighter!important;
+    color: #244970;
+    font-size: 15px !important;
+}
+
+a {
+    font-family: 'Proxima' !important;
+    font-weight: lighter!important;
+    font-size: 15px !important;
+    text-decoration: none !important;
+}
+
+.form-control {
+    box-shadow: none !important;
+}
+
+
+/***** ========= Header Style Start ======= *****/
+
+.custom-header {
+    background: #fff;
+    color: #000;
+    height: 57px;
+    padding-left: 1em;
+}
+
+.header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: auto;
+    z-index: 10000;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .12) !important;
+}
+
+.navbar.navbar-inverse {
+    background-color: #fff !important;
+    color: #000 !important;
+    border: none;
+}
+
+.nav .open>a,
+.nav .open>a:focus,
+.nav .open>a:hover {
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+
+.custom-header_label {
+    font-size: 22px;
+    color: #000;
+    padding-top: 5px;
+    margin-bottom: 0px !important;
+}
+
+.customlogo {
+    width: 7em;
+    padding-top: 1em;
+    cursor: pointer
+}
+
+.custom-navbar {
+    background: transparent;
+    color: #000;
+    margin-bottom: 0;
+}
+
+
+/***** ========= Header Style End ======= *****/
+
+
+/***** ========= Collapsed Panel Style Start ======== *****/
+
+.panel-heading {
+    cursor: pointer;
+}
+
+.panel-heading:after {
+    /* symbol for "opening" panels */
+    font-family: 'Glyphicons Halflings';
+    /* essential for enabling glyphicon */
+    content: "\e114";
+    /* adjust as needed, taken from bootstrap.css */
+    float: right;
+    /* adjust as needed */
+    color: #fc5663;
+    /* adjust as needed */
+    margin-top: -1.25em;
+}
+
+.panel-heading.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\e080";
+    /* adjust as needed, taken from bootstrap.css */
+}
+
+.panel {
+    border-color: #eee !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.panel-primary>.panel-heading {
+    background: #fff!important;
+    border-color: #fff !important;
+    color: #244970;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .10), 0 1px 2px 0 rgba(0, 0, 0, 0.15) !important;
+    border-left: 4px solid #1cadcd !important;
+    padding: 1em;
+}
+
+.panel-paddingLeft {
+    padding-left: 7px;
+}
+
+
+/***** ========= Collapsed Panel Style End ======== *****/
+
+
+/***** ========= Action Button Style Start ======== *****/
+
+.custom-btn,
+.custom-btn:hover,
+.custom-btn:active {
+    background: #002e62;
+    border: #002e62;
+    color: #fff;
+    padding: 7px 12px;
+    min-width: 65px;
+}
+
+/***** ========= Action Button Style End ======== *****/
+
+.custom-padding15 {
+    padding-left: 1.5em;
+}
+
+
